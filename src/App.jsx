@@ -5,16 +5,22 @@ import Header from './components/Header'
 import { useFilters } from './hooks/useFilters'
 import { CartProvider } from './context/cart'
 
+import { ChakraProvider, Box } from '@chakra-ui/react'
+
 function App () {
   const [products] = useState(initialProducts)
   const { filterProducts } = useFilters()
   const filteredProducts = filterProducts(products)
 
   return (
-    <CartProvider>
-      <Header/>
-      <Products products={filteredProducts} />
-    </CartProvider>
+    <ChakraProvider>
+      <CartProvider>
+        <Box bg='gray.50'>
+          <Header/>
+          <Products products={filteredProducts} />
+        </Box>
+      </CartProvider>
+    </ChakraProvider>
   )
 }
 

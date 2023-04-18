@@ -4,6 +4,8 @@ import { CartIcon, ClearCartIcon } from './Icons'
 import { useCart } from '../hooks/useCart'
 import CartItem from './CartItem'
 
+import { Button } from '@chakra-ui/react'
+
 const Cart = () => {
   const cartCheckboxId = useId()
   const { clearCart, cart, addToQuantity, subtractToQuantity } = useCart()
@@ -31,9 +33,9 @@ const Cart = () => {
           ))}
 
         </ul>
-        <button onClick={clearCart}>
+        <Button marginTop='1rem' onClick={clearCart}>
           <ClearCartIcon/>
-        </button>
+        </Button>
 
       </aside>
     </>

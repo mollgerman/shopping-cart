@@ -15,11 +15,15 @@
 }
 
 #root {
-  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   width: 100%;
+  min-height: 100vh;
 }
 
 body {

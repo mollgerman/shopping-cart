@@ -1,21 +1,27 @@
 import React from 'react'
+import { Image, Text, Button, Box } from '@chakra-ui/react'
 
 const CartItem = ({ id, thumbnail, description, title, price, quantity, modifyQuantityAdd, modifyQuantitySubtract }) => {
   return (
     <li key={id}>
-      <img
+      <Image
+        mt='15px'
         src={thumbnail}
         alt={description}
       />
-      <span>{title} </span>
-      <span>${price}</span>
-
+      <Box display='flex' justifyContent='space-between' my='20px'>
+        <Text fontSize='2xl' fontWeight='bold'>{title} </Text>
+        <Text fontSize='xl' fontWeight='bold' color='blue.500'>${price}</Text>
+      </Box>
       <footer>
-        <button onClick={modifyQuantitySubtract}>-</button>
-        <small>
-          Qty: {quantity}
-        </small>
-        <button onClick={modifyQuantityAdd}>+</button>
+        <Button onClick={modifyQuantitySubtract}>-</Button>
+        <Text fontSize='lg'>
+          Quantity:
+        </Text>
+        <Text fontSize='lg' fontWeight='bold'>
+          {quantity}
+        </Text>
+        <Button onClick={modifyQuantityAdd}>+</Button>
       </footer>
     </li>
   )

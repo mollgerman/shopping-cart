@@ -2,6 +2,7 @@
 import React, { useId } from 'react'
 import { useFilters } from '../hooks/useFilters'
 import '../styles/Filters.css'
+import { Select, Box, Text, Input } from '@chakra-ui/react'
 
 const Filters = () => {
   const minPriceFilterId = useId()
@@ -24,29 +25,35 @@ const Filters = () => {
 
   return (
     <section className='filters'>
-      <div>
-        <label htmlFor={minPriceFilterId}>Price from:</label>
-        <input
-          type='range'
-          id={minPriceFilterId}
-          min='0'
-          max='3000'
-          step='10'
-          value={filters.minPrice}
-          onChange={handleChangeMinPrice}
-        />
-        <span>${filters.minPrice}</span>
-      </div>
-      <div>
-        <label htmlFor={categoryFilterId}>Category</label>
-        <select id={categoryFilterId} onChange={handleChangeCategory}>
-          <option value="all">All</option>
-          <option value="laptops">Laptops</option>
-          <option value="smartphones">Smartphones</option>
-          <option value="all">All</option>
-          <option value="all">All</option>
-        </select>
-      </div>
+      <Box display='flex' justifyContent='space-around' width='100%'>
+        <Box display='flex'>
+          <label htmlFor={minPriceFilterId}><Text px='1rem' fontSize='lg'>Price from:</Text></label>
+          <Input
+            type='range'
+            id={minPriceFilterId}
+            min='0'
+            max='1749'
+            step='10'
+            value={filters.minPrice}
+            onChange={handleChangeMinPrice}
+          />
+          <Text fontSize='lg' px='1rem'>${filters.minPrice}</Text>
+        </Box>
+        <Box display='flex'>
+          <label htmlFor={categoryFilterId}>
+            <Text fontSize='lg' px='1rem'> Category </Text>
+          </label>
+          <Select id={categoryFilterId} onChange={handleChangeCategory}>
+            <option value="all">All</option>
+            <option value="laptops">Laptops</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="home-decoration">Home Decoration</option>
+            <option value="skincare">Skincare</option>
+            <option value="groceries">Groceries</option>
+          </Select>
+        </Box>
+      </Box>
+
     </section>
   )
 }

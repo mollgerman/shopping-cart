@@ -1,11 +1,11 @@
 .cart {
-  background: #000;
+  background: #e6e6e6;
   display: none;
   padding: 32px;
   position: fixed;
   right: 0px;
   top: 0px;
-  width: 200px;
+  width: 300px;
 }
 
 .cart img {
@@ -14,7 +14,7 @@
 }
 
 .cart li {
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #a8a4a4;
   padding-bottom: 16px;
 }
 
@@ -31,18 +31,18 @@
 
 .cart-button {
   align-items: center;
-  background: #09f;
+  background: rgb(192, 192, 192);
   border-radius: 9999px;
   cursor: pointer;
   display: flex;
-  height: 32px;
+  height: 50px;
   justify-content: center;
   padding: 4px;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: 10px;
+  top: 10px;
   transition: all .3s ease;
-  width: 32px;
+  width: 50px;
   z-index: 9999;
 }
 
